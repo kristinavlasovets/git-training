@@ -15,8 +15,7 @@ function App() {
 	}, []);
 
 	console.log(users);
-
-	console.log(1);
+	console.log('sec)');
 	return (
 		<div className="App">
 			{' '}
