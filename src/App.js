@@ -1,29 +1,32 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import Form from './components/Form';
 
 function App() {
-  const [users, setUsers] = useState([]);
+	const [users, setUsers] = useState([]);
 
-  async function fetchData(url) {
-    let response = await fetch(url);
-    let result = await response.json();
-    setUsers(result);
-  }
+	async function fetchData(url) {
+		let response = await fetch(url);
+		let result = await response.json();
+		setUsers(result);
+	}
 
-  useEffect(() => {
-    fetchData('https://jsonplaceholder.typicode.com/users');
-  }, []);
+	useEffect(() => {
+		fetchData('https://jsonplaceholder.typicode.com/users');
+	}, []);
 
-  console.log(users);
-  return (
-    <div className="App">
-      {' '}
-      <Form />
-      {users.map((user) => (
-        <h1 key={user.id}>{user.username}</h1>
-      ))}
-    </div>
-  );
+	console.log(users);
+
+	console.log(1);
+	console.log(12);
+	return (
+		<div className="App">
+			{' '}
+			<Form />
+			{users.map((user) => (
+				<h1 key={user.id}>{user.username}</h1>
+			))}
+		</div>
+	);
 }
 
 export default App;
